@@ -19,8 +19,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install pytest
-        run: pip install pytest
+      - name: Verify Python installation
+        run: python --version
 
-      - name: Run unit tests
-        run: python -m pytest --collect-only
+      - name: Run unit tests with unittest
+        run: python -m unittest circle.py rectangle.py square.py triangle.py -v
